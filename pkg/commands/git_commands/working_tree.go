@@ -31,6 +31,10 @@ func (self *WorkingTreeCommands) OpenMergeToolCmdObj() oscommands.ICmdObj {
 	return self.cmd.New(NewGitCmd("mergetool").ToArgv())
 }
 
+func (self *WorkingTreeCommands) FileCheckoutTheirs() oscommands.ICmdObj {
+	return self.cmd.New(NewGitCmd("checkout").Arg("--theirs").ToArgv())
+}
+
 func (self *WorkingTreeCommands) OpenMergeTool() error {
 	return self.OpenMergeToolCmdObj().Run()
 }

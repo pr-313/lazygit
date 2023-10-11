@@ -358,6 +358,7 @@ type KeybindingFilesConfig struct {
 	Fetch                    string `yaml:"fetch"`
 	ToggleTreeView           string `yaml:"toggleTreeView"`
 	OpenMergeTool            string `yaml:"openMergeTool"`
+	FileWideHunkPick         string `yaml:"fileWideChunkPick"`
 	OpenStatusFilter         string `yaml:"openStatusFilter"`
 }
 
@@ -748,9 +749,10 @@ func GetDefaultConfig() *UserConfig {
 				ViewResetOptions:         "D",
 				Fetch:                    "f",
 				ToggleTreeView:           "`",
-				OpenMergeTool:            "M",
-				OpenStatusFilter:         "<c-b>",
-				ConfirmDiscard:           "x",
+				// OpenMergeTool:            "M",
+				FileWideHunkPick: "M",
+				OpenStatusFilter: "<c-b>",
+				ConfirmDiscard:   "x",
 			},
 			Branches: KeybindingBranchesConfig{
 				CopyPullRequestURL:     "<c-y>",

@@ -122,6 +122,11 @@ func (self *FilesController) GetKeybindings(opts types.KeybindingsOpts) []*types
 			Description: self.c.Tr.OpenMergeTool,
 		},
 		{
+			Key:         opts.GetKey(opts.Config.Files.FileWideHunkPick),
+			Handler:     self.c.Helpers().WorkingTree.FileWideHunkPick,
+			Description: self.c.Tr.FileWideHunkPick,
+		},
+		{
 			Key:         opts.GetKey(opts.Config.Files.Fetch),
 			Handler:     self.fetch,
 			Description: self.c.Tr.Fetch,

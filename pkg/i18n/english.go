@@ -192,6 +192,7 @@ type TranslationSet struct {
 	AbortMenuItem                       string
 	PickHunk                            string
 	PickAllHunks                        string
+	FileWideHunkPick                    string
 	ViewMergeRebaseOptions              string
 	NotMergingOrRebasing                string
 	AlreadyRebasing                     string
@@ -762,6 +763,7 @@ type Actions struct {
 	Redo                              string
 	CopyPullRequestURL                string
 	OpenMergeTool                     string
+	FileWideHunkPick                  string
 	OpenCommitInBrowser               string
 	OpenPullRequest                   string
 	StartBisect                       string
@@ -842,6 +844,7 @@ func EnglishTranslationSet() TranslationSet {
 		ToggleStagedAll:                     "Stage/unstage all",
 		ToggleTreeView:                      "Toggle file tree view",
 		OpenMergeTool:                       "Open external merge tool (git mergetool)",
+		FileWideHunkPick:                    "Pick all --theirs or --ours chunks",
 		Refresh:                             "Refresh",
 		Push:                                "Push",
 		Pull:                                "Pull",
@@ -1517,6 +1520,7 @@ func EnglishTranslationSet() TranslationSet {
 			Redo:                              "Redo",
 			CopyPullRequestURL:                "Copy pull request URL",
 			OpenMergeTool:                     "Open merge tool",
+			FileWideHunkPick:                  "Pick --theirs or --ours version of file",
 			OpenCommitInBrowser:               "Open commit in browser",
 			OpenPullRequest:                   "Open pull request in browser",
 			StartBisect:                       "Start bisect",

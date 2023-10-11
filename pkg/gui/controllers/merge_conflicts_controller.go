@@ -101,6 +101,12 @@ func (self *MergeConflictsController) GetKeybindings(opts types.KeybindingsOpts)
 			Description: self.c.Tr.OpenMergeTool,
 		},
 		{
+			Key:         opts.GetKey(opts.Config.Files.FileWideHunkPick),
+			Handler:     self.c.Helpers().WorkingTree.FileWideHunkPick,
+			Description: self.c.Tr.FileWideHunkPick,
+			Display:     true,
+		},
+		{
 			Key:         opts.GetKey(opts.Config.Universal.Select),
 			Handler:     self.withRenderAndFocus(self.HandlePickHunk),
 			Description: self.c.Tr.PickHunk,

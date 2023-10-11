@@ -83,6 +83,19 @@ func (self *WorkingTreeHelper) OpenMergeTool() error {
 	})
 }
 
+func (self *WorkingTreeHelper) FileWideHunkPick() error {
+	return self.c.Confirm(types.ConfirmOpts{
+		Title:  "HelloWorld",
+		Prompt: "Heelooooo ",
+		HandleConfirm: func() error {
+			self.c.LogAction(self.c.Tr.Actions.FileWideHunkPick)
+			return self.c.RunSubprocessAndRefresh(
+				self.c.Git().WorkingTree.FileCheckoutTheirs(),
+			)
+		},
+	})
+}
+
 func (self *WorkingTreeHelper) HandleCommitPressWithMessage(initialMessage string) error {
 	return self.WithEnsureCommitableFiles(func() error {
 		return self.commitsHelper.OpenCommitMessagePanel(
